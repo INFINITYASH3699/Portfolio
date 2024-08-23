@@ -1,0 +1,24 @@
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.icons {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #aaa;
+}
