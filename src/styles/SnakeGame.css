@@ -1,0 +1,10 @@
+.snake-game-canvas {
+    position: absolute;
+    top: 63px;
+    left: 1;
+    width: 100%;
+    height: calc(100% - 62px);
+    width: calc(100% + 5px);
+    z-index: 1;
+    opacity: 1;
+}

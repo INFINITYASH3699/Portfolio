@@ -29,7 +29,7 @@ const About = () => {
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            Hello! I'm <span className="highlight">Yash Hulle</span>, a passionate
+            Hello! I'm <span className="about-highlight">Yash Hulle</span>, a passionate
             Frontend Developer, Web Developer, and Web Designer. Currently,
             I'm in my final year of B.Tech in Computer Science Engineering. I
             love creating interactive and visually appealing web applications
@@ -37,7 +37,7 @@ const About = () => {
           </p>
           <p>
             I have a strong foundation in
-            <span className="highlight">HTML, CSS, JavaScript, React, Python, SQL, and MongoDB</span>.
+            <span className="about-highlight">HTML, CSS, JavaScript, React, Python, SQL, and MongoDB</span>.
             I enjoy working on challenging projects and continuously improving
             my skills. Whether it's developing a responsive website, designing
             user-friendly interfaces, or writing efficient code, I'm always

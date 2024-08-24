@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import SnakeGame from "./snakeGame.jsx";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -15,10 +16,13 @@ const Home = () => {
     };
 
     document.addEventListener("mousemove", handleMouseMove);
+
     return () => document.removeEventListener("mousemove", handleMouseMove);
   }, []);
+
   return (
     <section id="home" className="hero">
+      <SnakeGame />
       <div className="hero-content">
         <h1>
           Hi, I'm <span className="highlight">Yash Hulle</span>

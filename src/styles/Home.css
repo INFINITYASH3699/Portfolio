@@ -14,12 +14,13 @@
 
 .hero-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .highlight {
-  color: #00ff00;
   font-weight: bold;
+  -webkit-text-stroke: 2px #00ffff;
+  color: transparent;
 }
 
 h1 {
@@ -78,17 +79,19 @@ p.tagline {
 }
 
 .cta {
-  background-color: #00ff00;
+  background-color: transparent;
   padding: 12px 24px;
+  border: 1px solid #00cc00;
   border-radius: 5px;
   text-decoration: none;
-  color: #000;
+  color: white;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .cta:hover {
   background-color: #00cc00;
+  color: black;
 }
 
 .network-overlay {
@@ -97,7 +100,7 @@ p.tagline {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   pointer-events: none;
   background: #000;
 }
