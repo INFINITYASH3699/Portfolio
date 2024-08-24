@@ -94,6 +94,44 @@ p.tagline {
   color: black;
 }
 
+.btn-nav {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  width: 100%;
+  max-width: 20rem;
+  height: 10rem;
+  gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .btns-text {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.2;
+  }
+  .btns-text:hover {
+    opacity: 1;
+  }
+  .btns {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid red;
+    opacity: 0.2;
+  }
+  .btns:hover {
+    opacity: 1;
+  }
+}
+
 .network-overlay {
   position: absolute;
   top: 0;

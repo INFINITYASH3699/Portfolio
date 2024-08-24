@@ -7,4 +7,5 @@
     width: calc(100% + 5px);
     z-index: 1;
     opacity: 1;
+    pointer-events: none;
 }
