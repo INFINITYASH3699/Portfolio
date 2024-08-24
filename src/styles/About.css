@@ -48,6 +48,22 @@
     color: #00ffff;
     font-weight: bold;
   }
+
+  .resume {
+    background-color: transparent;
+    padding: 12px 24px;
+    border: 1px solid #00ffff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .resume:hover {
+    background-color: #00ffff;
+    color: black;
+  }
   
   .network-overlay {
     position: absolute;

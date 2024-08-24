@@ -49,6 +49,7 @@ const About = () => {
             industry trends. I'm also interested in AI and machine learning,
             and how they can be applied to web development.
           </p>
+          <a class="resume" href="https://drive.google.com/uc?export=download&id=1_dpZ4RndUOwoJ3SD56R2dOIFsU_pr3cz" download="Yash Hulle(Resume).pdf">Resume</a>
         </div>
       </div>
       <div className="network-overlay"></div>
