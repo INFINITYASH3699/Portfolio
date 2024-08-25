@@ -21,24 +21,22 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="about-content">
-        <img
-          src={mypic}
-          alt="Yash Hulle"
-          className="profile-pic"
-        />
+        <img src={mypic} alt="Yash Hulle" className="profile-pic" />
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-            Hello! I'm <span className="about-highlight">Yash Hulle</span>, a passionate
-            Frontend Developer, Web Developer, and Web Designer. Currently,
-            I'm in my final year of B.Tech in Computer Science Engineering. I
-            love creating interactive and visually appealing web applications
-            that solve real-world problems.
+            Hello! I'm <span className="about-highlight">Yash Hulle</span>, a
+            passionate Frontend Developer, Web Developer, and Web Designer.
+            Currently, I'm in my final year of B.Tech in Computer Science
+            Engineering. I love creating interactive and visually appealing web
+            applications that solve real-world problems.
           </p>
           <p>
-            I have a strong foundation in
-            <span className="about-highlight">HTML, CSS, JavaScript, React, Python, SQL, and MongoDB</span>.
-            I enjoy working on challenging projects and continuously improving
+            I have a strong foundation in{" "}
+            <span className="about-highlight">
+              HTML, CSS, JavaScript, React, Python, SQL, and MongoDB
+            </span>
+            . I enjoy working on challenging projects and continuously improving
             my skills. Whether it's developing a responsive website, designing
             user-friendly interfaces, or writing efficient code, I'm always
             eager to take on new challenges and learn from them.
@@ -46,10 +44,16 @@ const About = () => {
           <p>
             In my spare time, I enjoy exploring the latest web technologies,
             contributing to open-source projects, and staying updated with
-            industry trends. I'm also interested in AI and machine learning,
-            and how they can be applied to web development.
+            industry trends. I'm also interested in AI and machine learning, and
+            how they can be applied to web development.
           </p>
-          <a class="resume" href="https://drive.google.com/uc?export=download&id=1_dpZ4RndUOwoJ3SD56R2dOIFsU_pr3cz" download="Yash Hulle(Resume).pdf">Resume</a>
+          <a
+            class="resume"
+            href="https://drive.google.com/uc?export=download&id=1g8e99t5JVKPAGcKco-gw7lqac0nyMrTL"
+            download="Yash Hulle(Resume).pdf"
+          >
+            Resume
+          </a>
         </div>
       </div>
       <div className="network-overlay"></div>

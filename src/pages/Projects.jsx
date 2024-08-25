@@ -26,6 +26,33 @@ const Projects = () => {
       <div className="container">
         <h2>My Projects</h2>
         <div className="projects-content">
+          
+          <div className="project-card">
+            <div className="project-front">
+              <img
+                src={opexImage}
+                alt="Project"
+                className="project-image"
+              />
+              <h3 className="project-title">Opex-Home-Solutions</h3>
+            </div>
+            <div className="project-back">
+              <p>
+                Opex Home Solution is an innovative platform leveraging AI and
+                ML to revolutionize home design and construction with features
+                like design options, architectural plans, and contractor
+                connections.
+              </p>
+              <Link
+                to="https://infinityash3699.github.io/Opex-Home-Solutions/"
+                className="btn-visit"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit
+              </Link>
+            </div>
+          </div>
           <div className="project-card">
             <div className="project-front">
               <img
@@ -76,32 +103,7 @@ const Projects = () => {
               </Link>
             </div>
           </div>
-          <div className="project-card">
-            <div className="project-front">
-              <img
-                src={opexImage}
-                alt="Project"
-                className="project-image"
-              />
-              <h3 className="project-title">Opex-Home-Solutions</h3>
-            </div>
-            <div className="project-back">
-              <p>
-                Opex Home Solution is an innovative platform leveraging AI and
-                ML to revolutionize home design and construction with features
-                like design options, architectural plans, and contractor
-                connections.
-              </p>
-              <Link
-                to="https://infinityash3699.github.io/Opex-Home-Solutions/"
-                className="btn-visit"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit
-              </Link>
-            </div>
-          </div>
+          
         </div>
       </div>
       <div className="network-overlay"></div>
