@@ -47,7 +47,7 @@ const SnakeGame = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return; // Ensure canvas is available
+    if (!canvas) return;
     const ctx = canvas.getContext("2d");
 
     const interval = setInterval(() => {
@@ -67,7 +67,7 @@ const SnakeGame = () => {
   }, [snake, direction, isGameOver]);
 
   useEffect(() => {
-    setFood(generateRandomFood()); // Generate a new food position and image
+    setFood(generateRandomFood());
   }, []);
 
   const handleKeyPress = (e) => {
@@ -93,6 +93,10 @@ const SnakeGame = () => {
     }
   };
 
+  const handleButtonPress = (key) => {
+    handleKeyPress({ key });
+  };
+
   const updateSnakePosition = () => {
     const newSnake = [...snake];
     const head = { ...newSnake[0] };
@@ -106,7 +110,7 @@ const SnakeGame = () => {
   const checkCollision = () => {
     const head = snake[0];
     const canvas = canvasRef.current;
-    if (!canvas) return; // Ensure canvas is available
+    if (!canvas) return;
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
@@ -136,7 +140,6 @@ const SnakeGame = () => {
     setSnake(newSnake);
     setSnakeImages(newSnakeImages);
 
-    // Remove the eaten food image from remaining images
     setRemainingImages((prev) => {
       const newRemainingImages = new Set(prev);
       newRemainingImages.delete(food.img);
@@ -146,7 +149,7 @@ const SnakeGame = () => {
 
   const drawGame = (ctx) => {
     const canvas = canvasRef.current;
-    if (!canvas) return; // Ensure canvas is available
+    if (!canvas) return;
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
@@ -158,12 +161,11 @@ const SnakeGame = () => {
     ctx.strokeRect(0, 0, canvasWidth, canvasHeight);
 
     // Draw snake with glowing effect
-    ctx.shadowColor = "rgba(0, 255, 0, 0.8)"; // Glowing color
-    ctx.shadowBlur = 15; // Glowing blur effect
-    ctx.fillStyle = "rgba(0, 255, 0, 0.6)"; // Transparent snake color
+    ctx.shadowColor = "rgba(0, 255, 0, 0.8)";
+    ctx.shadowBlur = 15;
+    ctx.fillStyle = "rgba(0, 255, 0, 0.6)";
 
     snake.forEach((segment, index) => {
-      // Draw the corresponding image for each body segment
       if (index > 0 && snakeImages[index - 1]) {
         const img = new Image();
         img.src = images[snakeImages[index - 1]];
@@ -171,24 +173,18 @@ const SnakeGame = () => {
           ctx.drawImage(img, segment.x, segment.y, 20, 20);
         };
       } else {
-        // Draw the body segments with glowing effect
         ctx.fillRect(segment.x, segment.y, 20, 20);
       }
     });
 
-    // Reset shadow for the food
     ctx.shadowColor = "rgba(0, 0, 0, 0)";
 
-    // Draw the food with glowing effect
     if (images[food.img]) {
       const img = new Image();
       img.src = images[food.img];
       img.onload = () => {
-        // Apply a subtle glow effect
-        ctx.shadowColor = "rgba(255, 215, 0, 0.8)"; // Glowing color for food
-        ctx.shadowBlur = 15; // Glowing blur effect
-
-        // Draw the food with glow
+        ctx.shadowColor = "rgba(255, 215, 0, 0.8)";
+        ctx.shadowBlur = 15;
         ctx.drawImage(img, food.x, food.y, 20, 20);
       };
     }
@@ -196,11 +192,10 @@ const SnakeGame = () => {
 
   const generateRandomFood = () => {
     const canvas = canvasRef.current;
-    if (!canvas) return { x: 0, y: 0, img: null }; // Ensure canvas is available
+    if (!canvas) return { x: 0, y: 0, img: null };
     const canvasWidth = canvas.width;
     const canvasHeight = canvas.height;
 
-    // If all images have been eaten, reset the remaining images
     if (remainingImages.size === 0) {
       setRemainingImages(new Set(Object.keys(images)));
     }
@@ -221,17 +216,28 @@ const SnakeGame = () => {
     setDirection({ x: 10, y: 0 });
     setIsGameOver(false);
     setSnakeImages([]);
-    setRemainingImages(new Set(Object.keys(images))); // Reset remaining images
+    setRemainingImages(new Set(Object.keys(images)));
     setFood(generateRandomFood());
   };
 
   return (
-    <canvas
-      ref={canvasRef}
-      className="snake-game-canvas"
-      width={window.innerWidth}
-      height={window.innerHeight}
-    ></canvas>
+    <div>
+      <canvas
+        ref={canvasRef}
+        className="snake-game-canvas"
+        width={window.innerWidth}
+        height={window.innerHeight}
+      ></canvas>
+      {/* Navigation Buttons */}
+      <div className="btn-nav">
+        <div className="btns-text">The game is already started!</div>
+        <div className="btns" onClick={() => handleButtonPress('w')}>W ( &#8593; )</div>
+        <div className="btns-text">Keep Learning Keep Growing...</div>
+        <div className="btns" onClick={() => handleButtonPress('a')}>A ( &#8592; )</div>
+        <div className="btns" onClick={() => handleButtonPress('s')}>S ( &#8595; )</div>
+        <div className="btns" onClick={() => handleButtonPress('d')}>D ( &#8594; )</div>
+      </div>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import SnakeGame from "./snakeGame.jsx";
 import "../styles/Home.css";
 
 const Home = () => {
+  
   useEffect(() => {
     const overlay = document.querySelector(".network-overlay");
     const handleMouseMove = (e) => {
@@ -39,14 +40,6 @@ const Home = () => {
         <Link to="/contact" className="cta">
           Get in Touch
         </Link>
-      </div>
-      <div className="btn-nav">
-        <div className="btns-text">The game is already started!</div>
-        <div className="btns">W ( &#8593; )</div>
-        <div className="btns-text">Learn the technology...</div>
-        <div className="btns">A ( &#8592; )</div>
-        <div className="btns">S ( &#8595; )</div>
-        <div className="btns">D ( &#8594; )</div>
       </div>
       <div className="network-overlay"></div>
     </section>

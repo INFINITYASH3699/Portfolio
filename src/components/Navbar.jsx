@@ -9,37 +9,41 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header>
       <nav className="navbar">
         <div className="logo">
-          <Link to="/">Yash Hulle</Link>
+          <Link to="/" onClick={closeMenu}>
+            Yash Hulle
+          </Link>
         </div>
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           <li>
-            <Link to="/" className="">
+            <Link to="/" onClick={closeMenu}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/about" className="">
+            <Link to="/about" onClick={closeMenu}>
               About
             </Link>
           </li>
           <li>
-            <Link to="/skills" className="">
+            <Link to="/skills" onClick={closeMenu}>
               Skills
             </Link>
           </li>
-
           <li>
-            <Link to="/projects" className="">
+            <Link to="/projects" onClick={closeMenu}>
               Projects
             </Link>
           </li>
-
           <li>
-            <Link to="/contact" className="">
+            <Link to="/contact" onClick={closeMenu}>
               Contact
             </Link>
           </li>
