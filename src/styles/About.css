@@ -1,150 +1,168 @@
 .about {
-    position: relative;
-    padding: 100px 20px;
-    background-color: #000;
-    color: #ffffff;
-    text-align: center;
-    overflow: hidden;
-    cursor: url("../assets/torch.png") , auto;
+  position: relative;
+  padding: 100px 20px;
+  background-color: #000;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  cursor: url("../assets/torch.png"), auto;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: left;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-pic {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid #00ffff;
+}
+
+.about-text {
+  max-width: 600px;
+  margin-left: 40px;
+  line-height: 1.8;
+}
+
+.about-text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #00ffff;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.about-highlight {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+.resume {
+  background-color: transparent;
+  padding: 12px 24px;
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.resume:hover {
+  background-color: #00ffff;
+  color: black;
+}
+
+.network-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  background: #000;
+}
+
+.network-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 255, 0.1) 10%,
+    rgba(0, 0, 0, 0.7) 70%
+  );
+  z-index: 1;
+}
+
+.network-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(0, 255, 255, 0.2) 50%,
+    rgba(0, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 40px 40px;
+  z-index: 2;
+  opacity: 0.2;
+  animation: glowingLines 2s linear infinite;
+}
+
+@keyframes glowingLines {
+  0% {
+    opacity: 0.2;
   }
-  
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@media (max-width: 1024px) {
   .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    text-align: left;
-    position: relative;
-    z-index: 2;
-  }
-  
-  .profile-pic {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-    border: 2px solid #00ffff;
-  }
-  
-  .about-text {
-    max-width: 600px;
-    margin-left: 40px;
-    line-height: 1.8;
-  }
-  
-  .about-text h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #00ffff;
-  }
-  
-  .about-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .about-highlight {
-    color: #00ffff;
-    font-weight: bold;
+    flex-direction: column;
+    text-align: center;
   }
 
-  .resume {
-    background-color: transparent;
-    padding: 12px 24px;
-    border: 1px solid #00ffff;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+  .about-text {
+    margin-left: 0;
   }
-  
-  .resume:hover {
-    background-color: #00ffff;
-    color: black;
+}
+
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 350px;
+    height: 350px;
   }
-  
-  .network-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-    background: #000;
+
+  .about-text h2 {
+    font-size: 2.5rem;
   }
-  
-  .network-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 10%, rgba(0, 0, 0, 0.7) 70%);
-    z-index: 1;
+
+  .about-text p {
+    font-size: 1.1rem;
   }
-  
-  .network-overlay::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(0, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(0, 255, 255, 0.2) 50%, rgba(0, 255, 255, 0.2) 75%, transparent 75%, transparent);
-    background-size: 40px 40px;
-    z-index: 2;
-    opacity: 0.2;
-    animation: glowingLines 2s linear infinite;
+}
+
+@media (max-width: 480px) {
+  .profile-pic {
+    width: 250px;
+    height: 250px;
   }
-  
-  @keyframes glowingLines {
-    0% { opacity: 0.2; }
-    50% { opacity: 0.6; }
-    100% { opacity: 0.2; }
+
+  .about-text h2 {
+    font-size: 2rem;
   }
-  
-  @media (max-width: 1024px) {
-    .about-content {
-      flex-direction: column;
-      text-align: center;
-    }
-  
-    .about-text {
-      margin-left: 0;
-    }
+
+  .about-text p {
+    font-size: 1rem;
   }
-  
-  @media (max-width: 768px) {
-    .profile-pic {
-      width: 350px;
-      height: 350px;
-    }
-  
-    .about-text h2 {
-      font-size: 2.5rem;
-    }
-  
-    .about-text p {
-      font-size: 1.1rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .profile-pic {
-      width: 250px;
-      height: 250px;
-    }
-  
-    .about-text h2 {
-      font-size: 2rem;
-    }
-  
-    .about-text p {
-      font-size: 1rem;
-    }
-  }
-  
+}

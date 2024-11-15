@@ -4,7 +4,6 @@ import SnakeGame from "./snakeGame.jsx";
 import "../styles/Home.css";
 
 const Home = () => {
-  
   useEffect(() => {
     const overlay = document.querySelector(".network-overlay");
     const handleMouseMove = (e) => {
@@ -16,9 +15,20 @@ const Home = () => {
       overlay.style.background = `radial-gradient(circle at ${offsetX}% ${offsetY}%, rgba(0, 255, 0, 0.8), rgba(0, 0, 0, 0))`;
     };
 
-    document.addEventListener("mousemove", handleMouseMove);
+    const handleKeyDown = (e) => {
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(e.key)) {
+        e.preventDefault(); // Prevent the default scrolling behavior
+      }
+    };
 
-    return () => document.removeEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup the event listeners when the component unmounts
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
 
   return (
@@ -37,9 +47,9 @@ const Home = () => {
           I'm passionate about building interactive and visually appealing web
           experiences.
         </p>
-        <Link to="/contact" className="cta">
+        <a href="#contact" className="cta">
           Get in Touch
-        </Link>
+        </a>
       </div>
       <div className="network-overlay"></div>
     </section>
